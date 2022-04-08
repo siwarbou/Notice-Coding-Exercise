@@ -3,8 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Notice Coding Exercise</title>
+    <script>
+      function changetitle() {
+              if (document.querySelector('title').textContent!="Welcome")
+              {
+                  document.querySelector('title').textContent="Welcome";
+                  document.getElementById("title").textContent = "Welcome";
+              }
+              else{
+              document.querySelector('title').textContent  = "Notice Coding Exercise";
+              document.getElementById("title").textContent = "Notice Coding Exercise";
+              }
+          }
+    </script>
   </head>
   <body>
-    <h1>>Hello, world !_</h1>
+    <h1 id="title" >Notice Coding Exercise</h1>
+    <h2>>Hello, world !_</h2>
+    <button onclick=changetitle()>Change title</button>
   </body>
 </html>
