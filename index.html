@@ -15,6 +15,14 @@
               document.getElementById("title").textContent = "Notice Coding Exercise";
               }
           }
+      function save(){
+            document.getElementById("affichename").textContent = document.getElementById("inputname").value;
+            sessionStorage.setItem('name', document.getElementById("inputname").value);
+      }
+      function read_name(){
+          document.getElementById("affichename").textContent = sessionStorage.getItem('name');
+  
+      }
     </script>
     <style>
           ul {
@@ -42,7 +50,7 @@
           }
     </style>
   </head>
-  <body>
+  <body onload=read_name()>
     <ul>
       <li><a class="active" href="index.html">Home</a></li>
       <li><a href="profile.html">Profile</a></li>
@@ -52,5 +60,10 @@
     <h1 id="title" >Notice Coding Exercise</h1>
     <h2>>Hello, world !_</h2>
     <button onclick=changetitle()>Change title</button>
+    <br><br><br>
+    <label for="name">Name :</label>
+    <input type="text" id="inputname" name="name" requiredminlength="4" maxlength="8" size="10">
+    <button onclick=save()>Save</button>
+    <label id="affichename"></label>
   </body>
 </html>
